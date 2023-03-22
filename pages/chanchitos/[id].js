@@ -1,17 +1,11 @@
-import {useRouter} from 'next/router'
-import { useState, useEffect } from 'react'
+import useIsMounted from "@/hooks/useIsMounted"
+import { useRouter } from "next/router"
+
 const ChanchitoDinamico = () => {
-    const router =  useRouter()
-    const [loaded, setLoaded] = useState(false)
-    useEffect(() =>{
-        if( router.isReady){
-            setLoaded(true)
-        }
-    }, [router.isReady] )
-    
-    if(!loaded){
-        return null
-    }
+    const isMounted=useIsMounted()
+    const router= useRouter()
+
+    if(!isMounted){return null}
     return (
         <div>
             <p> chanchito dinamico </p>
