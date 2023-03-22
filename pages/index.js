@@ -1,7 +1,12 @@
+import Link from 'next/link'
 
 
 export default function Home() {
   return (
-    <p>Hola cerdo</p>
+    <div>
+        <Link href={'/chanchitos/feliz'}>Ir a chanchitos</Link>
+        <p>Hola cerdo</p>
+
+    </div>
   )
 }
